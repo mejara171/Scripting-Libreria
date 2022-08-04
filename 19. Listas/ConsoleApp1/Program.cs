@@ -84,6 +84,7 @@ namespace Arrays
             customArrayList.PrintElements();
         }
 
+        // Los ArrayList de c# crecen de 40 en 40. 
         static void LibraryListTest()
         {
 
