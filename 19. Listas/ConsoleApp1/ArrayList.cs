@@ -4,8 +4,10 @@ using System.Text;
 
 namespace Arrays
 {
+    //Es un tipo generico. guarda cualquier tipo de cosa. 
     public class ArrayList<T>
     {
+        
         private T[] _storage;
         private int _lastItemIndex;
 
@@ -15,6 +17,7 @@ namespace Arrays
             _lastItemIndex = -1;
         }
 
+        
         public void Add(T item)
         {
             //revisa si estoy en el ultimo, le suma 1 y aumenta el tamaño del arreglo. Contador 
@@ -31,6 +34,7 @@ namespace Arrays
         {
             ValidateIndex(index);
 
+            //Verifica si estoy en el ultimo elemento del arreglo
             if (_lastItemIndex == _storage.Length - 1)
             {
                 ExpandStorage();
@@ -44,6 +48,7 @@ namespace Arrays
             // copy the segment starting from the initial 
             // index to the index + 1 to free up the space
             // to insert the element
+            //Algoritmo de orden O(n)
             Array.Copy(_storage, index, _storage, index + 1,
                 segmentLength);
 
